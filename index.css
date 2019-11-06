@@ -11,6 +11,7 @@ h1 {
 
 hr {
   background-color: #b5403b;
+  border-color: #b5403b;
   grid-column: 1/4;
 }
 
