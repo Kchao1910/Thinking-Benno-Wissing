@@ -1,0 +1,127 @@
+* {
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  letter-spacing: -0.1rem;
+  margin: 0;
+}
+
+h1 {
+  grid-column: 2/4;
+  justify-self: end;
+}
+
+hr {
+  color: #b5403b;
+  grid-column: 1/4;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 12rem);
+  grid-template-rows: repeat(3, 12rem) auto;
+  grid-gap: 1rem;
+}
+
+.outer-square {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 12rem;
+  width: 12rem;
+  z-index: 1;
+}
+
+.inner-circle {
+  align-items: inherit;
+  display: inherit;
+  justify-content: inherit;
+  border-radius: 5rem;
+  height: 10rem;
+  width: 10rem;
+  z-index: 2;
+}
+
+.inner-square {
+  height: 6rem;
+  width: 6rem;
+  z-index: 3;
+}
+
+.outer-square:nth-child(1), .outer-square:nth-child(5), .outer-square:nth-child(9),
+.outer-square:nth-child(2) .inner-circle, .outer-square:nth-child(6) .inner-circle, .outer-square:nth-child(7) .inner-circle,
+.outer-square:nth-child(3) .inner-circle .inner-square, .outer-square:nth-child(4) .inner-circle .inner-square,
+.outer-square:nth-child(8) .inner-circle .inner-square {
+  background-color: #81a7d0;
+}
+
+.outer-square:nth-child(2), .outer-square:nth-child(6), .outer-square:nth-child(7),
+.outer-square:nth-child(3) .inner-circle, .outer-square:nth-child(4) .inner-circle, .outer-square:nth-child(8) .inner-circle,
+.outer-square:nth-child(1) .inner-circle .inner-square, .outer-square:nth-child(5) .inner-circle .inner-square,
+.outer-square:nth-child(9) .inner-circle .inner-square {
+  background-color: #083e60;
+}
+
+.outer-square:nth-child(3), .outer-square:nth-child(4), .outer-square:nth-child(8),
+.outer-square:nth-child(1) .inner-circle, .outer-square:nth-child(5) .inner-circle, .outer-square:nth-child(9) .inner-circle,
+.outer-square:nth-child(2) .inner-circle .inner-square, .outer-square:nth-child(6) .inner-circle .inner-square,
+.outer-square:nth-child(7) .inner-circle .inner-square {
+  background-color: #b5403b;;
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 8rem);
+    grid-template-rows: repeat(3, 8rem) auto;
+    grid-gap: 0.75rem;
+  }
+
+  .outer-square {
+    height: 8rem;
+    width: 8rem;
+  }
+
+  .inner-circle {
+    border-radius: 3rem;
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .inner-square {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 6rem);
+    grid-template-rows: repeat(3, 6rem) auto;
+    grid-gap: 0.5rem;
+  }
+
+  .outer-square {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .inner-circle {
+    border-radius: 2rem;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .inner-square {
+    height: 1rem;
+    width: 1rem;
+  }
+}
